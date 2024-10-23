@@ -1,0 +1,10 @@
+# Enable URL Rewriting
+RewriteEngine On
+
+# Specify the index file to be served as default
+DirectoryIndex index.php
+
+# Redirect all requests to index.php if the file or directory doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
